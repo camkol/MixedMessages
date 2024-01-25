@@ -4,8 +4,12 @@
 
 1. HTML
 2. CSS
-3. JavaScript
+
+- SASS
+
+1. JavaScript
 
 ## Notes
 
 - Using the ChatBot template
+- Added SASS
