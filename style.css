@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 }
 
 body {
-  background: #e3f2fd;
+  background-color: #e3f2fd;
 }
 
 .chatbot-toggler {
@@ -23,7 +24,7 @@ body {
   justify-content: center;
   outline: none;
   cursor: pointer;
-  background: #724ae8;
+  background-color: #c40700;
   border-radius: 50%;
   transition: all 0.2s ease;
 }
@@ -58,14 +59,14 @@ body {
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
-  background: #fff;
+  background-color: #fff;
   border-radius: 15px;
   transform-origin: bottom right;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
 }
 .chatbot header {
-  background: #724ae8;
+  background-color: #c40700;
   padding: 16px 0;
   text-align: center;
   position: relative;
@@ -93,7 +94,7 @@ body {
   width: 100%;
   display: flex;
   gap: 5px;
-  background: #fff;
+  background-color: #fff;
   padding: 5px 20px;
   border-top: 1px solid #ccc;
 }
@@ -108,18 +109,18 @@ body {
   font-size: 0.95rem;
   padding: 12px 16px;
   border-radius: 10px 10px 0 10px;
-  background: #724ae8;
+  background-color: #c40700;
 }
 .chatbox .chat p.error {
   color: #721c24;
-  background: #f8d7da;
+  background-color: #f8d7da;
 }
 .chatbox .incoming span {
   height: 32px;
   width: 32px;
   color: #fff;
   align-self: flex-end;
-  background: #724ae8;
+  background-color: #c40700;
   text-align: center;
   line-height: 32px;
   border-radius: 4px;
@@ -127,7 +128,7 @@ body {
 }
 .chatbox .incoming p {
   color: #000;
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   border-radius: 10px 10px 10px 0;
 }
 .chatbox .outgoing {
@@ -152,7 +153,7 @@ body {
   align-self: flex-end;
   height: 55px;
   line-height: 55px;
-  color: #724ae8;
+  color: #c40700;
   font-size: 1.35rem;
   cursor: pointer;
   visibility: hidden;

@@ -7,7 +7,6 @@ const chatbotCloseBtn = document.querySelector(".close-btn");
 
 // Initializing variables
 let userMessage = null;
-const API_KEY = ""; // Add your OpenAI API key here
 const inputInitHeight = chatInput.scrollHeight;
 
 // Function to create a chat li element with the provided message and class name
@@ -23,34 +22,30 @@ const createChatLi = (message, className) => {
   return chatLi;
 };
 
-// Function to generate a response from the chatbot API
-const generateResponse = (incomingChatLi) => {
-  const API_URL = "https://api.openai.com/v1/chat/completions";
-  const messageElement = incomingChatLi.querySelector("p");
+// Function to generate a response from pre-defined answers
+const generateResponse = () => {
+  const responses = [
+    "I'm not sure about that.",
+    "That's an interesting question!",
+    "I need to think about that.",
+    "Let me check my database...",
+    "Hmm, let me provide you with some information.",
+    "I'm still learning, but I'll do my best!",
+    "Ask me again in a minute.",
+    "I'm on a coffee break, but I'll get back to you.",
+    "Life's full of mysteries, isn't it?",
+    "Let me consult with my virtual crystal ball...",
+    "Why don't we ponder the meaning of life instead?",
+    "I'm feeling witty today: What did one chatbot say to the other? I'm byte-sized and ready to chat!",
+    "Knock, knock. Who's there? Chatbot. Chatbot who? Chatbot that's what I'm here for!",
+    "What's a chatbot's favorite movie? The Social Network!",
+    "Why don't chatbots ever get tired? They have plenty of bytes!",
+    "How does a chatbot express its feelings? In binary code!",
+    "I'm not just a chatbot; I'm a chatBFF (Best Friend Forever)!",
+  ];
 
-  const requestOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: userMessage }],
-    }),
-  };
-
-  // Send a POST request to the API and update the chat with the response
-  fetch(API_URL, requestOptions)
-    .then((res) => res.json())
-    .then((data) => {
-      messageElement.textContent = data.choices[0].message.content;
-    })
-    .catch((error) => {
-      messageElement.classList.add("error");
-      messageElement.textContent = "Damn! Something messed up. Try again.";
-    })
-    .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+  const randomIndex = Math.floor(Math.random() * responses.length);
+  return responses[randomIndex];
 };
 
 // Function to handle user input and initiate chat
@@ -69,7 +64,14 @@ const handleChat = () => {
     const incomingChatLi = createChatLi("Thinking...", "incoming");
     chatbox.appendChild(incomingChatLi);
     chatbox.scrollTo(0, chatbox.scrollHeight);
-    generateResponse(incomingChatLi);
+
+    setTimeout(() => {
+      // Generate a response and update the chat
+      const responseMessage = generateResponse();
+      const responseChatLi = createChatLi(responseMessage, "incoming");
+      chatbox.appendChild(responseChatLi);
+      chatbox.scrollTo(0, chatbox.scrollHeight);
+    }, 600);
   }, 600);
 };
 

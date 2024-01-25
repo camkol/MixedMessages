@@ -13,3 +13,5 @@
 
 - Using the ChatBot template
 - Added SASS
+- Ripped out the API
+- Repurposed to just answer back with a selection of responses
